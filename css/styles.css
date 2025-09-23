@@ -1,0 +1,5 @@
+/* Add this inside styles.css */
+.nav-links a.active {
+  color: blue; /* Change to your preferred highlight color */
+  font-weight: bold;
+}

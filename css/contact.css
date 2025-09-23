@@ -1,0 +1,126 @@
+/* =====================
+   CONTACT SECTION
+===================== */
+.contact-section {
+  padding: 4rem 1.5rem;
+  background: #f9fafb;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title */
+.contact-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.separator {
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #3b82f6;
+  margin: 0.75rem auto 1.5rem;
+  border-radius: 2px;
+}
+
+.subtitle {
+  color: #4b5563;
+  margin-bottom: 2.5rem;
+}
+
+/* Form */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+label {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+label i {
+  color: #3b82f6;
+}
+
+label span {
+  color: #3b82f6;
+}
+
+input,
+textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Button */
+button {
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* =====================
+   MOBILE / HAMBURGER STYLE
+===================== */
+@media (max-width: 768px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group.full-width {
+    width: 100%;
+  }
+
+  .contact-section .container {
+    padding: 0 1rem;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #0d1117;
+}
+
+/* Skills Section */
+#skills {
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+#skills h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#skills .highlight {
+  color: #3498db;
+}
+
+#skills .underline {
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: #3498db;
+  margin: 10px auto 40px;
+  border-radius: 4px;
+}
+
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skills-container h3 {
+  font-size: 24px;
+  margin: 30px 0 20px;
+  color: #ccc;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.skill-card {
+  background: rgba(40, 40, 40, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* Uniform Skill Logo Size */
+.skill-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.skill-card h4 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.experienced {
+  background: #3498db;
+  color: white;
+}
+
+.learning {
+  background: #27ae60;
+  color: white;
+}
+
+section {
+  min-height: 100vh; /* each section fills screen */
+  scroll-margin-top: 80px; /* avoids overlap with navbar */
+}
+
+/* ✅ Responsive Grid */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}

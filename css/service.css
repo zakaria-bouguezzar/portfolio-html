@@ -1,0 +1,80 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #000;
+    background: #fff;
+  }
+  
+  /* Section */
+  .service-section {
+    position: relative;
+    padding: 80px 20px; /* reduced padding to remove extra space */
+    text-align: center;
+    overflow: hidden;
+    background: none; /* seamless with portfolio */
+  }
+  
+  /* Title */
+  .section-title {
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Remove underline line */
+  .section-title .underline {
+    display: none;
+  }
+  
+  /* Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* Cards */
+  .service-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  
+  .service-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .service-card p {
+    font-size: 1rem;
+    color: #333;
+  }
+  

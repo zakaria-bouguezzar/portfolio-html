@@ -1,0 +1,16 @@
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .footer p {
+    font-size: 0.875rem; /* smaller text for copyright */
+    margin: 0;
+  }
+  
