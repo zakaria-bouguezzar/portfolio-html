@@ -222,31 +222,61 @@
 </section>
 
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>Contact</h2>
-      <span class="separator"></span>
-      <p class="subtitle">N'hésitez pas à me contacter.</p>
-      <form class="contact-form">
-        <div class="form-group">
-          <label><i class="fa fa-user"></i> Nom et prénom <span>*</span></label>
-          <input type="text" placeholder="Nom et Prénom *" required>
-        </div>
-        <div class="form-group">
-          <label><i class="fa fa-envelope"></i> Email <span>*</span></label>
-          <input type="email" placeholder="Saisissez votre email *" required>
-        </div>
-        <div class="form-group full-width">
-          <label><i class="fa fa-comment-dots"></i> Message <span>*</span></label>
-          <textarea placeholder="Saisissez votre message *" required rows="6"></textarea>
-        </div>
-        <div class="form-group full-width text-center">
-          <button type="submit">ENVOYER</button>
-        </div>
-      </form>
-    </div>
-  </section>
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2>Contact</h2>
+    <span class="separator"></span>
+    <p class="subtitle">N'hésitez pas à me contacter.</p>
+
+    <form id="contact-form" class="contact-form">
+      <div class="form-group">
+        <label><i class="fa fa-user"></i> Nom et prénom <span>*</span></label>
+        <input type="text" id="name" name="name" placeholder="Nom et Prénom *" required>
+      </div>
+      <div class="form-group">
+        <label><i class="fa fa-envelope"></i> Email <span>*</span></label>
+        <input type="email" id="email" name="email" placeholder="Saisissez votre email *" required>
+      </div>
+      <div class="form-group full-width">
+        <label><i class="fa fa-comment-dots"></i> Message <span>*</span></label>
+        <textarea id="message" name="message" placeholder="Saisissez votre message *" required rows="6"></textarea>
+      </div>
+      <div class="form-group full-width text-center">
+        <button type="submit">ENVOYER</button>
+      </div>
+    </form>
+
+    <!-- Success/Error message -->
+    <p id="form-message" style="text-align:center; margin-top:10px; display:none;"></p>
+  </div>
+</section>
+
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("_E3lGlTUl1c0390KV"); // ✅ Your Public Key
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent reload
+    const messageBox = document.getElementById("form-message");
+
+    emailjs.sendForm('service_zakaria33', 'template_cpfbhoh', this)
+      .then(function() {
+        messageBox.style.display = "block";
+        messageBox.style.color = "green";
+        messageBox.innerText = "✅ Message envoyé avec succès !";
+        document.getElementById('contact-form').reset();
+      }, function(error) {
+        messageBox.style.display = "block";
+        messageBox.style.color = "red";
+        messageBox.innerText = "❌ Échec de l'envoi : " + error.text;
+      });
+  });
+</script>
+
 
   <!-- FOOTER -->
   <footer class="footer">
