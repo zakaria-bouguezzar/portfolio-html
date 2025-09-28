@@ -18,10 +18,10 @@
   <!-- Font Awesome + Simple Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css">
+
   <!-- Three.js + Vanta.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
 </head>
 <body>
   <!-- NAVBAR -->
@@ -39,11 +39,9 @@
     </ul>
   </nav>
   
-  
-
-  <!-- VANTA BACKGROUND WRAPPER FOR HOME + ABOUT -->
+  <!-- VANTA BACKGROUND WRAPPER (Hero + About only) -->
   <div id="vanta-bg">
-    <!-- HOME SECTION (Hero) -->
+    <!-- HOME SECTION -->
     <section id="home" class="hero-section">
       <div class="hero-container">
         <div class="hero-text">
@@ -78,205 +76,138 @@
     </section>
   </div>
 
-  <!-- SERVICE SECTION -->
-  <section id="service" class="service-section">
-    <h2 class="section-title">À votre service !<span class="underline"></span></h2>
-    <div class="services-grid">
-      <div class="service-card"><i class="fas fa-gem service-icon"></i><h3>Frameworks & Library</h3><p>Bonne expérience avec React, Flutter, Tkinter ...</p></div>
-      <div class="service-card"><i class="fas fa-eye service-icon"></i><h3>Veille techno</h3><p>Toujours à l’affût des nouvelles technologies.</p></div>
-      <div class="service-card"><i class="fas fa-users service-icon"></i><h3>Ergonomie</h3><p>Soucieux de l'expérience utilisateur.</p></div>
-      <div class="service-card"><i class="fas fa-heart service-icon"></i><h3>Passion</h3><p>Beaucoup de cœur à l’ouvrage pour chaque projet.</p></div>
+<!-- SERVICE SECTION -->
+<section id="service" class="service-section">
+  <h2 class="section-title">À votre service !<span class="underline"></span></h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-gem service-icon"></i>
+      <h3>Frameworks & Library</h3>
+      <p>Bonne expérience avec React, Flutter, Tkinter ...</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-eye service-icon"></i>
+      <h3>Veille techno</h3>
+      <p>Toujours à l’affût des nouvelles technologies.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-users service-icon"></i>
+      <h3>Ergonomie</h3>
+      <p>Soucieux de l'expérience utilisateur.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-heart service-icon"></i>
+      <h3>Passion</h3>
+      <p>Beaucoup de cœur à l’ouvrage pour chaque projet.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="portfolio-section">
+    <h2>PORTFOLIO</h2>
+    <span class="underline"></span>
+    <p class="subtitle">Présentation de mes dernières expériences.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-card"><img src="assets/imgproject1.png" alt="Morocco Travel Guide"><div class="card-content"><h3>Morocco Travel Guide</h3><p>Web development</p></div></div>
+      <div class="portfolio-card"><img src="assets/imgproject2.png" alt="Restaurant Management"><div class="card-content"><h3>Restaurant Management</h3><p>Applications</p></div></div>
+      <div class="portfolio-card"><img src="assets/imgproject3.png" alt="Construction Company"><div class="card-content"><h3>Construction Company</h3><p>Web development</p></div></div>
+      <div class="portfolio-card"><img src="assets/imgproject4.png" alt="GameSetup Hub"><div class="card-content"><h3>GameSetup Hub</h3><p>Web development</p></div></div>
     </div>
   </section>
 
-  <!-- VANTA BACKGROUND WRAPPER FOR PORTFOLIO + SKILLS -->
-  <div id="portfolio-skills-bg">
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio" class="portfolio-section">
-      <h2>PORTFOLIO</h2>
-      <span class="underline"></span>
-      <p class="subtitle">Présentation de mes dernières expériences.</p>
-      <div class="portfolio-grid">
-        <div class="portfolio-card"><img src="assets/imgproject1.png" alt="Morocco Travel Guide"><div class="card-content"><h3>Morocco Travel Guide</h3><p>Web development</p></div></div>
-        <div class="portfolio-card"><img src="assets/imgproject2.png" alt="Restaurant Management"><div class="card-content"><h3>Restaurant Management</h3><p>Applications</p></div></div>
-        <div class="portfolio-card"><img src="assets/imgproject3.png" alt="Construction Company"><div class="card-content"><h3>Construction Company</h3><p>Web development</p></div></div>
-        <div class="portfolio-card"><img src="assets/imgproject4.png" alt="GameSetup Hub"><div class="card-content"><h3>GameSetup Hub</h3><p>Web development</p></div></div>
-      </div>
-    </section>
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills-section">
+    <h2>Explore My <span class="highlight">Skills</span></h2>
+    <span class="underline"></span>
+    <div class="skills-container">
 
-<!-- SKILLS SECTION -->
-<section id="skills" class="skills-section">
-  <h2>Explore My <span class="highlight">Skills</span></h2>
-  <span class="underline"></span>
-  <div class="skills-container">
+      <h3>Experienced Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><img src="assets/skills/react.png" alt="React Logo" class="skill-logo"><h4>React</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/Nodejs.png" alt="Node.js Logo" class="skill-logo"><h4>Node.js</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/ExpressJS.png" alt="ExpressJS Logo" class="skill-logo"><h4>ExpressJS</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/tailwindcss.png" alt="TailwindCSS Logo" class="skill-logo"><h4>TailwindCSS</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/flutter.png" alt="Flutter Logo" class="skill-logo"><h4>Flutter</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/Dart.png" alt="Dart Logo" class="skill-logo"><h4>Dart</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/java.png" alt="Java Logo" class="skill-logo"><h4>Java</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/mysql.png" alt="MySQL Logo" class="skill-logo"><h4>MySQL</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/sqflite.png" alt="SQLite Logo" class="skill-logo"><h4>SQFLite</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/WordPress.com.png" alt="WordPress Logo" class="skill-logo"><h4>WordPress</h4><span class="badge experienced">Experienced</span></div>
+      </div>
 
-    <h3>Experienced Skills</h3>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <img src="assets/skills/react.png" alt="React Logo" class="skill-logo">
-        <h4>React</h4>
-        <span class="badge experienced">Experienced</span>
+      <h3>Recently Learned Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-card"><img src="assets/skills/html.png" alt="HTML Logo" class="skill-logo"><h4>HTML</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/css.png" alt="CSS Logo" class="skill-logo"><h4>CSS</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/php.png" alt="PHP Logo" class="skill-logo"><h4>PHP</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/django.png" alt="Django Logo" class="skill-logo"><h4>Django</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/Typescript_logo.png" alt="TypeScript Logo" class="skill-logo"><h4>TypeScript</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/windev.png" alt="Windicss Logo" class="skill-logo"><h4>Windicss</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/laravel.png" alt="Laravel Logo" class="skill-logo"><h4>Laravel</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/python.png" alt="Python Logo" class="skill-logo"><h4>Python</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/firebase.png" alt="Firebase Logo" class="skill-logo"><h4>Firebase</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/Csharp.png" alt="C# Logo" class="skill-logo"><h4>C#</h4><span class="badge learning">Learning</span></div>
       </div>
-      <div class="skill-card">
-        <img src="assets/skills/Nodejs.png" alt="Node.js Logo" class="skill-logo">
-        <h4>Node.js</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/ExpressJS.png" alt="ExpressJS Logo" class="skill-logo">
-        <h4>ExpressJS</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/tailwindcss.png" alt="TailwindCSS Logo" class="skill-logo">
-        <h4>TailwindCSS</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/flutter.png" alt="Flutter Logo" class="skill-logo">
-        <h4>Flutter</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/Dart.png" alt="Dart Logo" class="skill-logo">
-        <h4>Dart</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/java.png" alt="Java Logo" class="skill-logo">
-        <h4>Java</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/mysql.png" alt="MySQL Logo" class="skill-logo">
-        <h4>MySQL</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/sqflite.png" alt="SQLite Logo" class="skill-logo">
-        <h4>SQFLite</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/WordPress.com.png" alt="WordPress Logo" class="skill-logo">
-        <h4>WordPress</h4>
-        <span class="badge experienced">Experienced</span>
-      </div>
+
     </div>
+  </section>
 
-    <h3>Recently Learned Skills</h3>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <img src="assets/skills/html.png" alt="HTML Logo" class="skill-logo">
-        <h4>HTML</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/css.png" alt="CSS Logo" class="skill-logo">
-        <h4>CSS</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/php.png" alt="PHP Logo" class="skill-logo">
-        <h4>PHP</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/django.png" alt="Django Logo" class="skill-logo">
-        <h4>Django</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/Typescript_logo.png" alt="TypeScript Logo" class="skill-logo">
-        <h4>TypeScript</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/windev.png" alt="Windicss Logo" class="skill-logo">
-        <h4>Windicss</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/laravel.png" alt="Laravel Logo" class="skill-logo">
-        <h4>Laravel</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/python.png" alt="Python Logo" class="skill-logo">
-        <h4>Python</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/firebase.png" alt="Firebase Logo" class="skill-logo">
-        <h4>Firebase</h4>
-        <span class="badge learning">Learning</span>
-      </div>
-      <div class="skill-card">
-        <img src="assets/skills/Csharp.png" alt="C# Logo" class="skill-logo">
-        <h4>C#</h4>
-        <span class="badge learning">Learning</span>
-      </div>
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contact</h2>
+      <span class="separator"></span>
+      <p class="subtitle">N'hésitez pas à me contacter.</p>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label><i class="fa fa-user"></i> Nom et prénom <span>*</span></label>
+          <input type="text" id="name" name="name" placeholder="Nom et Prénom *" required>
+        </div>
+        <div class="form-group">
+          <label><i class="fa fa-envelope"></i> Email <span>*</span></label>
+          <input type="email" id="email" name="email" placeholder="Saisissez votre email *" required>
+        </div>
+        <div class="form-group full-width">
+          <label><i class="fa fa-comment-dots"></i> Message <span>*</span></label>
+          <textarea id="message" name="message" placeholder="Saisissez votre message *" required rows="6"></textarea>
+        </div>
+        <div class="form-group full-width text-center">
+          <button type="submit">ENVOYER</button>
+        </div>
+      </form>
+
+      <!-- Success/Error message -->
+      <p id="form-message" style="text-align:center; margin-top:10px; display:none;"></p>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("_E3lGlTUl1c0390KV"); // ✅ Your Public Key
+    })();
 
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const messageBox = document.getElementById("form-message");
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="contact-section">
-  <div class="container">
-    <h2>Contact</h2>
-    <span class="separator"></span>
-    <p class="subtitle">N'hésitez pas à me contacter.</p>
-
-    <form id="contact-form" class="contact-form">
-      <div class="form-group">
-        <label><i class="fa fa-user"></i> Nom et prénom <span>*</span></label>
-        <input type="text" id="name" name="name" placeholder="Nom et Prénom *" required>
-      </div>
-      <div class="form-group">
-        <label><i class="fa fa-envelope"></i> Email <span>*</span></label>
-        <input type="email" id="email" name="email" placeholder="Saisissez votre email *" required>
-      </div>
-      <div class="form-group full-width">
-        <label><i class="fa fa-comment-dots"></i> Message <span>*</span></label>
-        <textarea id="message" name="message" placeholder="Saisissez votre message *" required rows="6"></textarea>
-      </div>
-      <div class="form-group full-width text-center">
-        <button type="submit">ENVOYER</button>
-      </div>
-    </form>
-
-    <!-- Success/Error message -->
-    <p id="form-message" style="text-align:center; margin-top:10px; display:none;"></p>
-  </div>
-</section>
-
-<!-- EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init("_E3lGlTUl1c0390KV"); // ✅ Your Public Key
-  })();
-
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent reload
-    const messageBox = document.getElementById("form-message");
-
-    emailjs.sendForm('service_zakaria33', 'template_cpfbhoh', this)
-      .then(function() {
-        messageBox.style.display = "block";
-        messageBox.style.color = "green";
-        messageBox.innerText = "✅ Message envoyé avec succès !";
-        document.getElementById('contact-form').reset();
-      }, function(error) {
-        messageBox.style.display = "block";
-        messageBox.style.color = "red";
-        messageBox.innerText = "❌ Échec de l'envoi : " + error.text;
-      });
-  });
-</script>
-
+      emailjs.sendForm('service_zakaria33', 'template_cpfbhoh', this)
+        .then(function() {
+          messageBox.style.display = "block";
+          messageBox.style.color = "green";
+          messageBox.innerText = "✅ Message envoyé avec succès !";
+          document.getElementById('contact-form').reset();
+        }, function(error) {
+          messageBox.style.display = "block";
+          messageBox.style.color = "red";
+          messageBox.innerText = "❌ Échec de l'envoi : " + error.text;
+        });
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -286,7 +217,7 @@
   <!-- Scripts -->
   <script src="js/main.js"></script>
   <script>
-    // Vanta background for Home + About (Hero animation preserved)
+    // ✅ Only one Vanta background (Hero + About)
     VANTA.NET({
       el: "#vanta-bg",
       mouseControls: true,
@@ -296,32 +227,6 @@
       scale: 1.0,
       scaleMobile: 1.0,
       color: 0x00aaff,
-      backgroundColor: 0x0d1117
-    });
-
-    // Vanta background for Services
-    VANTA.BIRDS({
-      el: "#service",
-      mouseControls: true,
-      touchControls: true,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color1: 0x415ea6,
-      backgroundColor: 0xffffff
-    });
-
-    // Vanta background for Portfolio + Skills (single animation)
-    VANTA.NET({
-      el: "#portfolio-skills-bg",
-      mouseControls: true,
-      touchControls: true,
-      minHeight: 600.0,
-      minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: 0x4e4e4e,
       backgroundColor: 0x0d1117
     });
   </script>
