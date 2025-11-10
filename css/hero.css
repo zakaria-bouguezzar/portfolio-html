@@ -38,12 +38,15 @@ body {
   font-size: 1.4rem;
   font-weight: bold;
   color: #00aaff;
+  flex-shrink: 0;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-links a {
@@ -57,6 +60,29 @@ body {
   font-weight: 600;
 }
 
+/* Language switcher */
+.lang-switcher {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  color: #00aaff;
+  font-weight: bold;
+}
+
 /* =====================
    MENU ICON
 ===================== */
@@ -65,6 +91,7 @@ body {
   font-size: 1.8rem;
   cursor: pointer;
   color: #00aaff;
+  flex-shrink: 0;
 }
 
 /* =====================
@@ -253,6 +280,10 @@ body {
     padding: 10px 20px;
   }
 
+  .logo {
+    font-size: 1.2rem;
+  }
+
   .menu-icon {
     display: block;
   }
@@ -296,6 +327,10 @@ body {
     color: #fff;
   }
 
+  .lang-switcher {
+    display: none;
+  }
+
   .hero-container {
     flex-direction: column;
     align-items: center;
@@ -330,4 +365,86 @@ body {
     justify-content: center;
     margin-top: 15px;
   }
+}
+
+/* Highlight the active navbar link */
+.nav-links a.active {
+  color: #00aaff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Change navbar background on scroll */
+.navbar.scrolled {
+  background: rgba(13, 17, 23, 0.9);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+
+/* Custom Cursor Styles */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+#cursor-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  opacity: 0;
+  will-change: transform;
+}
+
+.cursor-corner.top-left {
+  border-right: none;
+  border-bottom: none;
+  transform: translate(-100%, -100%);
+}
+
+.cursor-corner.top-right {
+  border-left: none;
+  border-bottom: none;
+  transform: translate(0%, -100%);
+}
+
+.cursor-corner.bottom-right {
+  border-left: none;
+  border-top: none;
+  transform: translate(0%, 0%);
+}
+
+.cursor-corner.bottom-left {
+  border-right: none;
+  border-top: none;
+  transform: translate(-100%, 0%);
+}
+
+/* Hide default cursor on interactive elements */
+.cursor-target {
+  cursor: none !important;
+}
+
+/* Apply to interactive elements */
+a, button, input, textarea, .btn, .nav-links li, .menu-icon, .service-card, .portfolio-card, .skill-card, .socials a, .scroll-down a {
+  cursor: none !important;
 }

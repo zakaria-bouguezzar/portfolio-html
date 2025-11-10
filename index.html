@@ -37,6 +37,32 @@
       backdrop-filter: blur(10px);
       transition: background 0.3s ease;
     }
+
+    /* Language switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 10px;
+      margin-left: auto;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    .lang-btn:hover,
+    .lang-btn.active {
+      color: #00aaff;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .lang-switcher {
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 
@@ -49,123 +75,126 @@
       <i class="fas fa-times" style="display: none;"></i>
     </div>
     <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#service">Services</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home" class="active" data-i18n="nav-home">Home</a></li>
+      <li><a href="#service" data-i18n="nav-services">Services</a></li>
+      <li><a href="#portfolio" data-i18n="nav-portfolio">Portfolio</a></li>
+      <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
     </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
   </nav>
 
   <!-- VANTA BACKGROUND WRAPPER -->
   <div id="vanta-bg">
     <!-- HOME SECTION -->
-<!-- HOME SECTION -->
-<section id="home" class="hero-section">
-  <div class="hero-container">
-    <div class="hero-text">
-      <p class="intro">Hello, I'm</p>
-      <h1><span class="highlight">Zakaria Bouguezzar</span> <span class="cursor">|</span></h1>
-      <h2 class="role">Fullstack Developer</h2>
-      <p class="location">From <span class="morocco">Morocco </span></p>
-      <div class="buttons">
-        <a href="assets/zakaria_bouguezzar.pdf" class="btn primary" download>Download CV</a>
-        <a href="#contact" class="btn secondary">Contact</a>
+    <section id="home" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p class="intro" data-i18n="hero-intro">Hello, I'm</p>
+          <h1><span class="highlight">Zakaria Bouguezzar</span> <span class="cursor">|</span></h1>
+          <h2 class="role" data-i18n="hero-role">Fullstack Developer</h2>
+          <p class="location"><span data-i18n="hero-location">From </span><span class="morocco" data-i18n="hero-morocco">Morocco</span></p>
+          <div class="buttons">
+            <a id="cv-link" href="assets/zakaria-bouguezzarEn.pdf" class="btn primary" download data-i18n="hero-download-cv">Download CV</a>
+            <a href="#contact" class="btn secondary" data-i18n="hero-contact">Contact</a>
+          </div>
+          <div class="socials">
+            <a href="https://github.com/zakaria-bouguezzar" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zakariabouguezzar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="assets/profilezakaria11.png" alt="Profile of Zakaria Bouguezzar" onerror="this.src='https://via.placeholder.com/280?text=Profile+Image';">
+        </div>
       </div>
-      <div class="socials">
-        <a href="https://github.com/zakaria-bouguezzar" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/zakaria-bou-2588b536b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-    <div class="hero-img">
-      <img src="assets/profilezakaria11.png" alt="Profile of Zakaria Bouguezzar" onerror="this.src='https://via.placeholder.com/280?text=Profile+Image';">
-    </div>
-  </div>
-  <div class="scroll-down"><a href="#about"><i class="fas fa-chevron-down"></i></a></div>
-</section>
+      <div class="scroll-down"><a href="#about"><i class="fas fa-chevron-down"></i></a></div>
+    </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
       <div class="about-container">
-        <h2>About Me</h2>
-        <p>Hi, I’m <strong>Zakaria Bouguezzar</strong>, a <span class="highlight">Technicien Spécialisé</span> and passionate <span class="highlight">Full-Stack Developer</span>. I create modern websites, mobile applications, and desktop software.</p>
-        <p>I love turning ideas into real projects, solving problems with clean code, and continuously learning new technologies.</p>
-        <p>My goal is simple: to build smart, efficient, and creative digital solutions that help people and businesses grow.</p>
+        <h2 data-i18n="about-title">About Me</h2>
+        <p data-i18n="about-p1">Hi, I’m <strong>Zakaria Bouguezzar</strong>, a <span class="highlight">Specialized Technician</span> and passionate <span class="highlight">Full-Stack Developer</span>. I create modern websites, mobile applications, and desktop software.</p>
+        <p data-i18n="about-p2">I love turning ideas into real projects, solving problems with clean code, and continuously learning new technologies.</p>
+        <p data-i18n="about-p3">My goal is simple: to build smart, efficient, and creative digital solutions that help people and businesses grow.</p>
       </div>
     </section>
   </div>
 
   <!-- SERVICE SECTION -->
   <section id="service" class="service-section">
-    <h2 class="section-title">À votre service !<span class="underline"></span></h2>
+    <h2 class="section-title"><span data-i18n="services-title">At your service!</span><span class="underline"></span></h2>
     <div class="services-grid">
       <div class="service-card">
         <i class="fas fa-gem service-icon"></i>
-        <h3>Frameworks & Library</h3>
-        <p>Bonne expérience avec React, Flutter, Tkinter ...</p>
+        <h3 data-i18n="service1-title">Frameworks & Library</h3>
+        <p data-i18n="service1-desc">Good experience with React, Flutter, Tkinter ...</p>
       </div>
       <div class="service-card">
         <i class="fas fa-eye service-icon"></i>
-        <h3>Veille techno</h3>
-        <p>Toujours à l’affût des nouvelles technologies.</p>
+        <h3 data-i18n="service2-title">Tech Watch</h3>
+        <p data-i18n="service2-desc">Always on the lookout for new technologies.</p>
       </div>
       <div class="service-card">
         <i class="fas fa-users service-icon"></i>
-        <h3>Ergonomie</h3>
-        <p>Soucieux de l'expérience utilisateur.</p>
+        <h3 data-i18n="service3-title">Ergonomics</h3>
+        <p data-i18n="service3-desc">Concerned about user experience.</p>
       </div>
       <div class="service-card">
         <i class="fas fa-heart service-icon"></i>
-        <h3>Passion</h3>
-        <p>Beaucoup de cœur à l’ouvrage pour chaque projet.</p>
+        <h3 data-i18n="service4-title">Passion</h3>
+        <p data-i18n="service4-desc">A lot of heart in the work for each project.</p>
       </div>
     </div>
   </section>
 
   <!-- PORTFOLIO SECTION -->
   <section id="portfolio" class="portfolio-section">
-    <h2>PORTFOLIO</h2>
+    <h2 data-i18n="portfolio-title">PORTFOLIO</h2>
     <span class="underline"></span>
-    <p class="subtitle">Présentation de mes dernières expériences.</p>
+    <p class="subtitle" data-i18n="portfolio-subtitle">Presentation of my latest experiences.</p>
     <div class="portfolio-grid">
-      <div class="portfolio-card"><img src="assets/imgproject1.png" alt="Morocco Travel Guide"><div class="card-content"><h3>Morocco Travel Guide</h3><p>Web development</p></div></div>
-      <div class="portfolio-card"><img src="assets/imgproject2.png" alt="Restaurant Management"><div class="card-content"><h3>Restaurant Management</h3><p>Applications</p></div></div>
-      <div class="portfolio-card"><img src="assets/imgproject3.png" alt="Construction Company"><div class="card-content"><h3>Construction Company</h3><p>Web development</p></div></div>
-      <div class="portfolio-card"><img src="assets/imgproject4.png" alt="GameSetup Hub"><div class="card-content"><h3>GameSetup Hub</h3><p>Web development</p></div></div>
+      <div class="portfolio-card"><img src="assets/imgproject1.png" alt="Morocco Travel Guide"><div class="card-content"><h3 data-i18n="port1-title">Morocco Travel Guide</h3><p data-i18n="port1-desc">Web development</p></div></div>
+      <div class="portfolio-card"><img src="assets/imgproject2.png" alt="Restaurant Management"><div class="card-content"><h3 data-i18n="port2-title">Restaurant Management</h3><p data-i18n="port2-desc">Applications</p></div></div>
+      <div class="portfolio-card"><img src="assets/imgproject3.png" alt="Construction Company"><div class="card-content"><h3 data-i18n="port3-title">Construction Company</h3><p data-i18n="port3-desc">Web development</p></div></div>
+      <div class="portfolio-card"><img src="assets/imgproject4.png" alt="GameSetup Hub"><div class="card-content"><h3 data-i18n="port4-title">GameSetup Hub</h3><p data-i18n="port4-desc">Web development</p></div></div>
     </div>
   </section>
 
   <!-- SKILLS SECTION -->
   <section id="skills" class="skills-section">
-    <h2>Explore My <span class="highlight">Skills</span></h2>
+    <h2><span data-i18n="skills-title">Explore My </span><span class="highlight" data-i18n="skills-highlight">Skills</span></h2>
     <span class="underline"></span>
     <div class="skills-container">
-      <h3>Experienced Skills</h3>
+      <h3 data-i18n="skills-exp-title">Experienced Skills</h3>
       <div class="skills-grid">
-        <div class="skill-card"><img src="assets/skills/react.png" alt="React Logo" class="skill-logo"><h4>React</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/Nodejs.png" alt="Node.js Logo" class="skill-logo"><h4>Node.js</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/ExpressJS.png" alt="ExpressJS Logo" class="skill-logo"><h4>ExpressJS</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/tailwindcss.png" alt="TailwindCSS Logo" class="skill-logo"><h4>TailwindCSS</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/flutter.png" alt="Flutter Logo" class="skill-logo"><h4>Flutter</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/Dart.png" alt="Dart Logo" class="skill-logo"><h4>Dart</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/java.png" alt="Java Logo" class="skill-logo"><h4>Java</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/mysql.png" alt="MySQL Logo" class="skill-logo"><h4>MySQL</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/sqflite.png" alt="SQLite Logo" class="skill-logo"><h4>SQFLite</h4><span class="badge experienced">Experienced</span></div>
-        <div class="skill-card"><img src="assets/skills/WordPress.com.png" alt="WordPress Logo" class="skill-logo"><h4>WordPress</h4><span class="badge experienced">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/react.png" alt="React Logo" class="skill-logo"><h4>React</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/Nodejs.png" alt="Node.js Logo" class="skill-logo"><h4>Node.js</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/ExpressJS.png" alt="ExpressJS Logo" class="skill-logo"><h4>ExpressJS</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/tailwindcss.png" alt="TailwindCSS Logo" class="skill-logo"><h4>TailwindCSS</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/flutter.png" alt="Flutter Logo" class="skill-logo"><h4>Flutter</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/Dart.png" alt="Dart Logo" class="skill-logo"><h4>Dart</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/java.png" alt="Java Logo" class="skill-logo"><h4>Java</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/mysql.png" alt="MySQL Logo" class="skill-logo"><h4>MySQL</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/sqflite.png" alt="SQLite Logo" class="skill-logo"><h4>SQFLite</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
+        <div class="skill-card"><img src="assets/skills/WordPress.com.png" alt="WordPress Logo" class="skill-logo"><h4>WordPress</h4><span class="badge experienced" data-i18n="badge-exp">Experienced</span></div>
       </div>
 
-      <h3>Recently Learned Skills</h3>
+      <h3 data-i18n="skills-learn-title">Recently Learned Skills</h3>
       <div class="skills-grid">
-        <div class="skill-card"><img src="assets/skills/html.png" alt="HTML Logo" class="skill-logo"><h4>HTML</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/css.png" alt="CSS Logo" class="skill-logo"><h4>CSS</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/php.png" alt="PHP Logo" class="skill-logo"><h4>PHP</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/django.png" alt="Django Logo" class="skill-logo"><h4>Django</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/Typescript_logo.png" alt="TypeScript Logo" class="skill-logo"><h4>TypeScript</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/windev.png" alt="Windicss Logo" class="skill-logo"><h4>Windicss</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/laravel.png" alt="Laravel Logo" class="skill-logo"><h4>Laravel</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/python.png" alt="Python Logo" class="skill-logo"><h4>Python</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/firebase.png" alt="Firebase Logo" class="skill-logo"><h4>Firebase</h4><span class="badge learning">Learning</span></div>
-        <div class="skill-card"><img src="assets/skills/Csharp.png" alt="C# Logo" class="skill-logo"><h4>C#</h4><span class="badge learning">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/html.png" alt="HTML Logo" class="skill-logo"><h4>HTML</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/css.png" alt="CSS Logo" class="skill-logo"><h4>CSS</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/php.png" alt="PHP Logo" class="skill-logo"><h4>PHP</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/django.png" alt="Django Logo" class="skill-logo"><h4>Django</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/Typescript_logo.png" alt="TypeScript Logo" class="skill-logo"><h4>TypeScript</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/windev.png" alt="Windicss Logo" class="skill-logo"><h4>Windicss</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/laravel.png" alt="Laravel Logo" class="skill-logo"><h4>Laravel</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/python.png" alt="Python Logo" class="skill-logo"><h4>Python</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/firebase.png" alt="Firebase Logo" class="skill-logo"><h4>Firebase</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
+        <div class="skill-card"><img src="assets/skills/Csharp.png" alt="C# Logo" class="skill-logo"><h4>C#</h4><span class="badge learning" data-i18n="badge-learn">Learning</span></div>
       </div>
     </div>
   </section>
@@ -173,24 +202,24 @@
   <!-- CONTACT SECTION -->
   <section id="contact" class="contact-section">
     <div class="container">
-      <h2>Contact</h2>
+      <h2 data-i18n="contact-title">Contact</h2>
       <span class="separator"></span>
-      <p class="subtitle">N'hésitez pas à me contacter.</p>
+      <p class="subtitle" data-i18n="contact-subtitle">Don't hesitate to contact me.</p>
       <form id="contact-form" class="contact-form">
         <div class="form-group">
-          <label><i class="fa fa-user"></i> Nom et prénom <span>*</span></label>
-          <input type="text" id="name" name="name" placeholder="Nom et Prénom *" required>
+          <label><i class="fa fa-user"></i> <span data-i18n="form-name">Full Name</span> <span>*</span></label>
+          <input type="text" id="name" name="name" placeholder="Full Name *" data-ph-key="form-name-ph" required>
         </div>
         <div class="form-group">
-          <label><i class="fa fa-envelope"></i> Email <span>*</span></label>
-          <input type="email" id="email" name="email" placeholder="Saisissez votre email *" required>
+          <label><i class="fa fa-envelope"></i> <span data-i18n="form-email">Email</span> <span>*</span></label>
+          <input type="email" id="email" name="email" placeholder="Enter your email *" data-ph-key="form-email-ph" required>
         </div>
         <div class="form-group full-width">
-          <label><i class="fa fa-comment-dots"></i> Message <span>*</span></label>
-          <textarea id="message" name="message" placeholder="Saisissez votre message *" required rows="6"></textarea>
+          <label><i class="fa fa-comment-dots"></i> <span data-i18n="form-message">Message</span> <span>*</span></label>
+          <textarea id="message" name="message" placeholder="Enter your message *" data-ph-key="form-message-ph" required rows="6"></textarea>
         </div>
         <div class="form-group full-width text-center">
-          <button type="submit">ENVOYER</button>
+          <button type="submit" data-i18n="form-submit">SEND</button>
         </div>
       </form>
       <p id="form-message" style="text-align:center; margin-top:10px; display:none;"></p>
@@ -218,6 +247,150 @@
       emailjs.init("_E3lGlTUl1c0390KV");
     })();
 
+    // Language translations
+    const translations = {
+      en: {
+        'nav-home': 'Home',
+        'nav-services': 'Services',
+        'nav-portfolio': 'Portfolio',
+        'nav-skills': 'Skills',
+        'nav-contact': 'Contact',
+        'hero-intro': 'Hello, I\'m',
+        'hero-role': 'Fullstack Developer',
+        'hero-location': 'From ',
+        'hero-morocco': 'Morocco',
+        'hero-download-cv': 'Download CV',
+        'hero-contact': 'Contact',
+        'about-title': 'About Me',
+        'about-p1': 'Hi, I’m <strong>Zakaria Bouguezzar</strong>, a <span class="highlight">Specialized Technician</span> and passionate <span class="highlight">Full-Stack Developer</span>. I create modern websites, mobile applications, and desktop software.',
+        'about-p2': 'I love turning ideas into real projects, solving problems with clean code, and continuously learning new technologies.',
+        'about-p3': 'My goal is simple: to build smart, efficient, and creative digital solutions that help people and businesses grow.',
+        'services-title': 'At your service!',
+        'service1-title': 'Frameworks & Library',
+        'service1-desc': 'Good experience with React, Flutter, Tkinter ...',
+        'service2-title': 'Tech Watch',
+        'service2-desc': 'Always on the lookout for new technologies.',
+        'service3-title': 'Ergonomics',
+        'service3-desc': 'Concerned about user experience.',
+        'service4-title': 'Passion',
+        'service4-desc': 'A lot of heart in the work for each project.',
+        'portfolio-title': 'PORTFOLIO',
+        'portfolio-subtitle': 'Presentation of my latest experiences.',
+        'port1-title': 'Morocco Travel Guide',
+        'port1-desc': 'Web development',
+        'port2-title': 'Restaurant Management',
+        'port2-desc': 'Applications',
+        'port3-title': 'Construction Company',
+        'port3-desc': 'Web development',
+        'port4-title': 'GameSetup Hub',
+        'port4-desc': 'Web development',
+        'skills-title': 'Explore My ',
+        'skills-highlight': 'Skills',
+        'skills-exp-title': 'Experienced Skills',
+        'skills-learn-title': 'Recently Learned Skills',
+        'badge-exp': 'Experienced',
+        'badge-learn': 'Learning',
+        'contact-title': 'Contact',
+        'contact-subtitle': 'Don\'t hesitate to contact me.',
+        'form-name': 'Full Name',
+        'form-email': 'Email',
+        'form-message': 'Message',
+        'form-submit': 'SEND',
+        'form-success': '✅ Message sent successfully!',
+        'form-error': '❌ Send failed: ',
+        'form-name-ph': 'Full Name *',
+        'form-email-ph': 'Enter your email *',
+        'form-message-ph': 'Enter your message *'
+      },
+      fr: {
+        'nav-home': 'Accueil',
+        'nav-services': 'Services',
+        'nav-portfolio': 'Portfolio',
+        'nav-skills': 'Compétences',
+        'nav-contact': 'Contact',
+        'hero-intro': 'Bonjour, je suis',
+        'hero-role': 'Développeur Fullstack',
+        'hero-location': 'De ',
+        'hero-morocco': 'Maroc',
+        'hero-download-cv': 'Télécharger CV',
+        'hero-contact': 'Contact',
+        'about-title': 'À propos',
+        'about-p1': 'Salut, je suis <strong>Zakaria Bouguezzar</strong>, un <span class="highlight">Technicien Spécialisé</span> et passionné de <span class="highlight">développement Full-Stack</span>. Je crée des sites web modernes, des applications mobiles et des logiciels de bureau.',
+        'about-p2': 'J\'adore transformer les idées en projets réels, résoudre les problèmes avec un code propre et apprendre continuellement de nouvelles technologies.',
+        'about-p3': 'Mon objectif est simple : construire des solutions numériques intelligentes, efficaces et créatives qui aident les personnes et les entreprises à se développer.',
+        'services-title': 'À votre service !',
+        'service1-title': 'Frameworks & Library',
+        'service1-desc': 'Bonne expérience avec React, Flutter, Tkinter ...',
+        'service2-title': 'Veille techno',
+        'service2-desc': 'Toujours à l’affût des nouvelles technologies.',
+        'service3-title': 'Ergonomie',
+        'service3-desc': 'Soucieux de l\'expérience utilisateur.',
+        'service4-title': 'Passion',
+        'service4-desc': 'Beaucoup de cœur à l’ouvrage pour chaque projet.',
+        'portfolio-title': 'PORTFOLIO',
+        'portfolio-subtitle': 'Présentation de mes dernières expériences.',
+        'port1-title': 'Morocco Travel Guide',
+        'port1-desc': 'Développement web',
+        'port2-title': 'Restaurant Management',
+        'port2-desc': 'Applications',
+        'port3-title': 'Construction Company',
+        'port3-desc': 'Développement web',
+        'port4-title': 'GameSetup Hub',
+        'port4-desc': 'Développement web',
+        'skills-title': 'Explorez mes ',
+        'skills-highlight': 'Compétences',
+        'skills-exp-title': 'Compétences Expérimentées',
+        'skills-learn-title': 'Compétences Récemment Apprises',
+        'badge-exp': 'Expérimenté',
+        'badge-learn': 'En apprentissage',
+        'contact-title': 'Contact',
+        'contact-subtitle': 'N\'hésitez pas à me contacter.',
+        'form-name': 'Nom et prénom',
+        'form-email': 'Email',
+        'form-message': 'Message',
+        'form-submit': 'ENVOYER',
+        'form-success': '✅ Message envoyé avec succès !',
+        'form-error': '❌ Échec de l\'envoi : ',
+        'form-name-ph': 'Nom et Prénom *',
+        'form-email-ph': 'Saisissez votre email *',
+        'form-message-ph': 'Saisissez votre message *'
+      }
+    };
+
+    let currentLang = 'en';
+
+    function updateLanguage() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[currentLang] && translations[currentLang][key]) {
+          el.innerHTML = translations[currentLang][key];
+        }
+      });
+      document.querySelectorAll('[data-ph-key]').forEach(el => {
+        const key = el.dataset.phKey;
+        if (translations[currentLang] && translations[currentLang][key]) {
+          el.placeholder = translations[currentLang][key];
+        }
+      });
+    }
+
+    // Language switcher event listeners
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentLang = btn.dataset.lang;
+        document.documentElement.lang = currentLang;
+        updateLanguage();
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cvLink = document.getElementById('cv-link');
+        cvLink.href = currentLang === 'en' ? 'assets/zakaria-bouguezzarEn.pdf' : 'assets/zakaria-bouguezzarFr.pdf';
+      });
+    });
+
+    // Initial update
+    updateLanguage();
+
+    // Contact form with language support
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
       const messageBox = document.getElementById("form-message");
@@ -226,12 +399,12 @@
         .then(function() {
           messageBox.style.display = "block";
           messageBox.style.color = "green";
-          messageBox.innerText = "✅ Message envoyé avec succès !";
+          messageBox.innerText = translations[currentLang]['form-success'];
           document.getElementById('contact-form').reset();
         }, function(error) {
           messageBox.style.display = "block";
           messageBox.style.color = "red";
-          messageBox.innerText = "❌ Échec de l'envoi : " + error.text;
+          messageBox.innerText = translations[currentLang]['form-error'] + error.text;
         });
     });
   </script>
