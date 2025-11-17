@@ -1,3 +1,97 @@
+/* MAIN LOADER CONTAINER */
+#zb-loader {
+  position: fixed;
+  inset: 0;
+  background: #031026;                /* dark blue */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 110px;
+  z-index: 999999;
+  overflow: hidden;
+  transition: opacity .6s ease, visibility .6s ease;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------------- NAME WITH LIGHT-DIRECTION ANIMATION ---------------- */
+
+.zb-name {
+  position: absolute;
+  top: 33%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.zb-name span {
+  opacity: 0;
+  transform:
+    translate(var(--x), var(--y))
+    scale(0.3)
+    rotate(calc(var(--x) * 0.2deg));
+  animation: letterFly 1.2s cubic-bezier(.21,.95,.32,1.2) forwards;
+  animation-delay: calc(var(--i) * 0.07s);
+  display: inline-block;
+}
+
+/* Each letter flies from its own angle → gathers in center */
+@keyframes letterFly {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+    transform: translate(0,0) scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0,0) scale(1);
+  }
+}
+
+/* ---------------- PERCENTAGE COUNTER ---------------- */
+
+.zb-percent {
+  font-size: 40px;
+  margin-top: 15px;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp .7s ease forwards 1.2s;
+}
+
+/* ---------------- LOADING LINE ---------------- */
+
+.zb-line {
+  width: 280px;
+  height: 5px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.zb-line-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00aaff, #00d4ff);
+  border-radius: inherit;
+  transition: width 0.15s linear;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* HIDE LOADER */
+#zb-loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
 /* Navigation Active Link */
 .nav-links a.active {
   color: blue;

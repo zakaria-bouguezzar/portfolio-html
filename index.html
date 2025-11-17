@@ -67,6 +67,41 @@
 </head>
 
 <body>
+ <!-- ================= PREMIUM DARK-BLUE PRELOADER ================= -->
+<div id="zb-loader">
+
+  <!-- NAME WITH MULTI-DIRECTION LIGHT ANIMATION -->
+  <div class="zb-name">
+    <span style="--i:1; --x:-60px; --y:-40px;">Z</span>
+    <span style="--i:2; --x:40px; --y:-70px;">a</span>
+    <span style="--i:3; --x:-80px; --y:70px;">k</span>
+    <span style="--i:4; --x:50px; --y:40px;">a</span>
+    <span style="--i:5; --x:-50px; --y:80px;">r</span>
+    <span style="--i:6; --x:70px; --y:-40px;">i</span>
+    <span style="--i:7; --x:-90px; --y:50px;">a</span>
+    &nbsp;
+    <span style="--i:8; --x:40px; --y:90px;">B</span>
+    <span style="--i:9; --x:-60px; --y:-80px;">o</span>
+    <span style="--i:10; --x:80px; --y:60px;">u</span>
+    <span style="--i:11; --x:-40px; --y:-70px;">g</span>
+    <span style="--i:12; --x:90px; --y:40px;">u</span>
+    <span style="--i:13; --x:-70px; --y:80px;">e</span>
+    <span style="--i:14; --x:50px; --y:-60px;">z</span>
+    <span style="--i:15; --x:-50px; --y:60px;">z</span>
+    <span style="--i:16; --x:70px; --y:-40px;">a</span>
+    <span style="--i:17; --x:-90px; --y:50px;">r</span>
+  </div>
+
+  <!-- PERCENT COUNTER -->
+  <div class="zb-percent" id="zb-percent">0%</div>
+
+  <!-- LOADING LINE -->
+  <div class="zb-line">
+    <div class="zb-line-fill" id="zb-line-fill"></div>
+  </div>
+
+</div>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">Zakaria Bouguezzar</div>
@@ -427,5 +462,26 @@
       backgroundColor: 0x0d1117
     });
   </script>
+  <script>
+    let percent = 0;
+    let interval = setInterval(() => {
+    
+      percent++;
+      document.getElementById("zb-percent").textContent = percent + "%";
+    
+      // fill line
+      document.getElementById("zb-line-fill").style.width = percent + "%";
+    
+      // when finished
+      if (percent >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          document.getElementById("zb-loader").classList.add("hide");
+        }, 400);
+      }
+    
+    }, 25); // speed 0 → 100
+    </script>
+  
 </body>
 </html>
