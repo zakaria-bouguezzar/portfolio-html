@@ -1,77 +1,75 @@
+/* ================= PREMIUM DARK-BLUE PRELOADER ================= */
+
 /* MAIN LOADER CONTAINER */
 #zb-loader {
   position: fixed;
   inset: 0;
-  background: #031026;                /* dark blue */
+  background: #031026; /* dark blue */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 110px;
+  gap: 40px;
+  padding: 20px;
   z-index: 999999;
   overflow: hidden;
-  transition: opacity .6s ease, visibility .6s ease;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
   color: #fff;
   font-family: "Poppins", sans-serif;
 }
 
-/* ---------------- NAME WITH LIGHT-DIRECTION ANIMATION ---------------- */
-
+/* ---------------- NAME WITH MULTI-DIRECTION LIGHT ANIMATION ---------------- */
 .zb-name {
-  position: absolute;
-  top: 33%;
   display: flex;
   flex-wrap: wrap;
-  font-size: 44px;
+  justify-content: center;
+  font-size: 48px;
   font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  position: relative;
 }
 
 .zb-name span {
   opacity: 0;
-  transform:
-    translate(var(--x), var(--y))
-    scale(0.3)
-    rotate(calc(var(--x) * 0.2deg));
-  animation: letterFly 1.2s cubic-bezier(.21,.95,.32,1.2) forwards;
-  animation-delay: calc(var(--i) * 0.07s);
   display: inline-block;
+  transform: translate(var(--x), var(--y)) scale(0.3) rotate(calc(var(--x) * 0.2deg));
+  animation: letterFly 1.3s cubic-bezier(0.21, 0.95, 0.32, 1.2) forwards;
+  animation-delay: calc(var(--i) * 0.07s);
 }
 
-/* Each letter flies from its own angle → gathers in center */
+/* Fly-in animation */
 @keyframes letterFly {
   0% {
     opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.3) rotate(calc(var(--x) * 0.2deg));
   }
   70% {
     opacity: 1;
-    transform: translate(0,0) scale(1.15);
+    transform: translate(0, 0) scale(1.2);
   }
   100% {
     opacity: 1;
-    transform: translate(0,0) scale(1);
+    transform: translate(0, 0) scale(1);
   }
 }
 
 /* ---------------- PERCENTAGE COUNTER ---------------- */
-
 .zb-percent {
-  font-size: 40px;
-  margin-top: 15px;
-  letter-spacing: 2px;
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: 3px;
   opacity: 0;
-  animation: fadeUp .7s ease forwards 1.2s;
+  animation: fadeUp 0.8s ease forwards 1.3s;
 }
 
 /* ---------------- LOADING LINE ---------------- */
-
 .zb-line {
-  width: 280px;
-  height: 5px;
-  background: rgba(255,255,255,0.15);
+  width: 300px;
+  max-width: 85vw;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 12px;
 }
 
 .zb-line-fill {
@@ -79,26 +77,106 @@
   height: 100%;
   background: linear-gradient(90deg, #00aaff, #00d4ff);
   border-radius: inherit;
-  transition: width 0.15s linear;
+  transition: width 0.1s linear;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* HIDE LOADER */
+/* HIDE LOADER WHEN DONE */
 #zb-loader.hide {
   opacity: 0;
   visibility: hidden;
 }
-/* Navigation Active Link */
+
+/* ========================================================= */
+/* ===================== MOBILE OPTIMIZATION =============== */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+  .zb-name {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .zb-percent {
+    font-size: 32px;
+  }
+
+  .zb-line {
+    height: 5px;
+    width: 80vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .zb-name {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+  }
+
+  .zb-name span {
+    /* Reduce fly distance on small screens – looks cleaner */
+    --mobile-factor: 0.6;
+    transform: translate(calc(var(--x) * var(--mobile-factor)), calc(var(--y) * var(--mobile-factor))) scale(0.3) rotate(calc(var(--x) * 0.2deg));
+  }
+
+  @keyframes letterFly {
+    0% {
+      opacity: 0;
+      transform: translate(calc(var(--x) * var(--mobile-factor)), calc(var(--y) * var(--mobile-factor))) scale(0.3);
+    }
+    70% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  .zb-percent {
+    font-size: 26px;
+    margin-top: 10px;
+  }
+
+  .zb-line {
+    height: 4px;
+    width: 75vw;
+  }
+
+  #zb-loader {
+    gap: 30px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .zb-name {
+    font-size: 24px;
+  }
+  .zb-percent {
+    font-size: 22px;
+  }
+}
+
+/* ================= OTHER STYLES (Cursor, Nav, etc.) ================= */
+
 .nav-links a.active {
-  color: blue;
+  color: #00aaff;
   font-weight: bold;
 }
 
-/* Custom Cursor Styles */
+/* Custom Cursor */
 #custom-cursor {
   position: fixed;
   top: 0;
@@ -120,48 +198,24 @@
   background: white;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  will-change: transform;
 }
 
 .cursor-corner {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border: 2px solid white;
   opacity: 0;
-  will-change: transform;
+  transition: opacity 0.3s;
 }
 
-.cursor-corner.top-left {
-  border-right: none;
-  border-bottom: none;
-  transform: translate(-100%, -100%);
-}
-
-.cursor-corner.top-right {
-  border-left: none;
-  border-bottom: none;
-  transform: translate(0%, -100%);
-}
-
-.cursor-corner.bottom-right {
-  border-left: none;
-  border-top: none;
-  transform: translate(0%, 0%);
-}
-
-.cursor-corner.bottom-left {
-  border-right: none;
-  border-top: none;
-  transform: translate(-100%, 0%);
-}
+.cursor-corner.top-left     { border-right: none; border-bottom: none; transform: translate(-100%, -100%); }
+.cursor-corner.top-right    { border-left: none;  border-bottom: none; transform: translate(0%, -100%); }
+.cursor-corner.bottom-right { border-left: none;  border-top: none;    transform: translate(0%, 0%); }
+.cursor-corner.bottom-left  { border-right: none; border-top: none;    transform: translate(-100%, 0%); }
 
 /* Hide default cursor on interactive elements */
-.cursor-target {
-  cursor: none !important;
-}
-
-/* Apply to interactive elements */
-a, button, input, textarea, .btn, .nav-links li, .menu-icon, .service-card, .portfolio-card, .skill-card, .socials a, .scroll-down a {
+a, button, input, textarea, .btn, .nav-links li, .menu-icon,
+.service-card, .portfolio-card, .skill-card, .socials a, .scroll-down a {
   cursor: none !important;
 }
